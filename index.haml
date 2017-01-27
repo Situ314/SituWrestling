@@ -1,0 +1,72 @@
+!!!5
+%html{class:"no-js", lang:"es"}
+	%head
+		%meta{charset:"utf-8"}
+		%title Wrestling SiTu
+		%meta{name:"description", content:"Página de Lucha Libre Independiente en Español. ROH, NJPW, PROGRESS, PWG, etc"}
+		%meta{name:"viewport", content:"width=devide-width, initial-scale=1"}
+		%link{rel:"stylesheet", href:"css/normalize.css"}
+		%link{rel:"stylesheet", href:"css/bootstrap.css"}
+		%link{rel:"stylesheet", href:"https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css"}
+		%link{rel:"stylesheet", href:"https://fonts.googleapis.com/css?family=Allerta+Stencil|Raleway"}
+		%link{rel:"stylesheet", href:"css/style.css"}
+		%script{src:"js/vendor/modernizr-2.8.3.min.js"}
+	%body
+		="<!--LANZA UNA CONDICIONAL EN CASO DE QUE EL BROWSER SEA ANTIGUO>"
+		="<!--[if lt IE 9]>"
+		%p{class:"browserupgrade"}
+			Estás usando un navegador
+			%strong desactualizado.
+			Por favor
+			%a{href:"http://browsehappy.com/"}
+				actualiza tu navegador
+			para una mejor experiencia
+		="<![endif] -->"
+		.video-container
+			%video{autoplay:true,loop:true,width:"1280",height:"720",poster:"/wrestling/videos/images/roh.png"}
+				%source{src:"/wrestling/videos/MP4/cc.mp4",typ:"video/mp4"}
+				%source{src:"wrestling/videos/webm/cc.webm", typ:"video/webm"}
+		.row.full-height.middle-xs.center-xs.relative.up#home
+			.col-xs-12
+				.box.texto-blanco
+					%img.food{src:"/wrestling/images/logo.png"}
+					%h1.title-text.no-margin.border-text SiTu Wrestling
+					%p.no-margin#is-open
+						%i.glyphicon.glyphicon-fire
+						Lucha Libre Independiente en Español
+			%nav.fixed.top.right.texto-blanco#navigation
+				-menu = ["Inicio", "Menú", "Galería", "Contacto", "Cómo llegar"]
+				%ul.list-inline.navigation
+					-menu.each do |item|
+						%li
+							%a{}= item
+			.absolute.black.large-padding.texto-blanco.full-width#description
+				.row.middle-xs.center-xs
+					.col-xs-7.col-sm-6.texto-blanco.medium
+						Toda la información de la Lucha Libre Independiente en Español
+					.col-xs.hidden#sticky-navigation
+						.box
+							%nav.text-right.navigation
+								%ul.list-inline.navigation
+									-menu.each do |item|
+										%li
+											%a{}= item
+
+		.text-center#menu
+			-menu_photos = [{name: "Ring of Honor", image: "roh", detail:"10.00"},{name: "Lucha Underground", image: "lu", detail:"20.00"},{name: "New Japan Pro Wrestling", image: "njpw", detail:"30.00"},{name: "Evolve Wrestling", image: "evolve", detail:"10.00"},{name: "Progress Strong-Style Pro Wrestling", image: "progress", detail:"10.00"},{name: "WhatCulture Pro Wrestling", image: "wcpw", detail:"10.00"},{name: "Pro Wrestling Guerrilla", image: "pwg", detail:"10.00"},{name: "Revolution Pro Wrestling", image: "revolution", detail:"10.00"}]
+			.row
+				-menu_photos.each do |photo|
+					.col-md-4.col-lg-3.col-sm-6.col-xs-12.food{style:"background-image:url(/wrestling/images/promotions/#{photo[:image]}.png)"}
+						.screen
+					
+
+
+
+
+
+		%script{src:"https://code.jquery.com/jquery-3.1.1.min.js", integrity:"sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=",crossorigin:"anonymous"}	
+		%script
+			window.jQuery || document.write("<script src='/wrestling/js/vendor/jquery-3.1.1.min.js'><\/script>")
+		%script{src:"/wrestling/js/main.js"}
+		}
+
