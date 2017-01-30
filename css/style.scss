@@ -205,7 +205,15 @@ textarea {
     margin-top: -220px;
 }
 
-
+input, textarea{
+    font-size: 2em;
+    padding: 0.5em;
+    border: none;
+    outline: none;
+    border-bottom: solid 1px #dddddd;
+    background-color: transparent;
+    width: 100%;
+}
 
 
 

@@ -85,16 +85,30 @@
 
 					%strong.stencil -SiTu
 
-		.black.texto.blanco.full-height#contact
+		.black.texto-blanco.full-height#contact
 			.row.middle-xs.full-height
 				.col-xs-12
 					.box
+						%form.normal-text{action:"https://formspree.io/cornamenta.l2@gmail.com",method:"POST",id:"contact-form"}
+							.row.center-xs
+								.col-xs-2.col-md-1
+									.box
+								.col-xs-5
+									.box
+										%input{type:"email", name:"email", placeholder:"Ingrese su correo electrónico", class:"input"}
+										%input{type:"text", name:"nombre", placeholder:"Ingrese su nombre", class:"input"}
+										%textarea{name:"body", placeholder:"¿En qué podemos ayudarte?", class:"input"}
+										%div
+											%button{type:"submit", class:"btn"}
+
 
 
 		%script{src:"https://code.jquery.com/jquery-3.1.1.min.js", integrity:"sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=",crossorigin:"anonymous"}	
 		%script
 			window.jQuery || document.write("<script src='/wrestling/js/vendor/jquery-3.1.1.min.js'><\/script>")
+		%script{src:"/wrestling/js/form_object.js"}
 		%script{src:"/wrestling/js/main.js"}
+		%script{src:"/wrestling/dist/steps.js"}
 
 		
 

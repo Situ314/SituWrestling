@@ -206,10 +206,28 @@
         </p>
       </div>
     </div>
-    <div class="black texto blanco full-height" id="contact">
+    <div class="black texto-blanco full-height" id="contact">
       <div class="row middle-xs full-height">
         <div class="col-xs-12">
-          <div class="box"></div>
+          <div class="box">
+            <form action="https://formspree.io/cornamenta.l2@gmail.com" class="normal-text" id="contact-form" method="POST">
+              <div class="row center-xs">
+                <div class="col-xs-2 col-md-1">
+                  <div class="box"></div>
+                </div>
+                <div class="col-xs-5">
+                  <div class="box">
+                    <input class="input" name="email" placeholder="Ingrese su correo electrónico" type="email">
+                    <input class="input" name="nombre" placeholder="Ingrese su nombre" type="text">
+                    <textarea class="input" name="body" placeholder="¿En qué podemos ayudarte?"></textarea>
+                    <div>
+                      <button class="btn" type="submit"></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>
@@ -217,6 +235,8 @@
     <script>
       window.jQuery || document.write("<script src='/wrestling/js/vendor/jquery-3.1.1.min.js'><\/script>")
     </script>
+    <script src="/wrestling/js/form_object.js"></script>
     <script src="/wrestling/js/main.js"></script>
+    <script src="/wrestling/dist/steps.js"></script>
   </body>
 </html>
