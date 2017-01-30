@@ -1,3 +1,4 @@
+-slider_photos = ["roh-wp","pwg-wp","njpw-wp","evolve-wp","progress-wp","revolution-wp","wcpw-wp","lu-wp"]
 !!!5
 %html{class:"no-js", lang:"es"}
 	%head
@@ -5,6 +6,7 @@
 		%title Wrestling SiTu
 		%meta{name:"description", content:"Página de Lucha Libre Independiente en Español. ROH, NJPW, PROGRESS, PWG, etc"}
 		%meta{name:"viewport", content:"width=devide-width, initial-scale=1"}
+		%meta{:"data-name" => "image-counter", content:"#{slider_photos.size - 1}"}
 		%link{rel:"stylesheet", href:"css/normalize.css"}
 		%link{rel:"stylesheet", href:"css/bootstrap.css"}
 		%link{rel:"stylesheet", href:"https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css"}
@@ -52,21 +54,47 @@
 										%li
 											%a{}= item
 
-		.text-center#menu
+		.text-center.relative#menu
+			.absolute#menu-title
+				%h2.title-text.texto-blanco Promotions
 			-menu_photos = [{name: "Ring of Honor", image: "roh", detail:"10.00"},{name: "Lucha Underground", image: "lu", detail:"20.00"},{name: "New Japan Pro Wrestling", image: "njpw", detail:"30.00"},{name: "Evolve Wrestling", image: "evolve", detail:"10.00"},{name: "Progress Strong-Style Pro Wrestling", image: "progress", detail:"10.00"},{name: "WhatCulture Pro Wrestling", image: "wcpw", detail:"10.00"},{name: "Pro Wrestling Guerrilla", image: "pwg", detail:"10.00"},{name: "Revolution Pro Wrestling", image: "revolution", detail:"10.00"}]
 			.row
 				-menu_photos.each do |photo|
 					.col-md-4.col-lg-3.col-sm-6.col-xs-12.food{style:"background-image:url(/wrestling/images/promotions/#{photo[:image]}.png)"}
 						.screen
+							.row.middle-xs.full-height
+								.col-xs-12
+									%h3.stencil.texto-blanco.subtitle= photo[:name]
+									%p.no-margin.texto-blanco.medium= photo[:detail] + " $"			
+		#gallery
+			.inner
+				-slider_photos.each do |image|
+					.image{style:"background-image:url(/wrestling/images/promotions/#{image}.jpg)"}
+		.container
+			.card.white.texto-oscuro.relative
+				%h3.text-center.subtitle.slim.normal-text
 					
+					%strong.stencil WRESTLING
+					is not a sport, is a 
+					%strong.stencil WAY OF LIFE	
+								
+				%p.normal-text.top-space.medium
+					In professional wrestling, the independent circuit or indie circuit is the collective name of independent professional wrestling promotions which are smaller than major televised promotions (such as WWE or TNA). It is roughly analogous to a minor league for pro wrestling, or community or regional theatre.
 
+					Specific promotions on the independent circuit are referred to as indie promotions or indies. A wrestler is said to be in the indies or working the indies if he or she is wrestling in one of the independent promotions, or working the indie circuit if he or she is performing in different independent promotions.
 
+					%strong.stencil -SiTu
 
+		.black.texto.blanco.full-height#contact
+			.row.middle-xs.full-height
+				.col-xs-12
+					.box
 
 
 		%script{src:"https://code.jquery.com/jquery-3.1.1.min.js", integrity:"sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=",crossorigin:"anonymous"}	
 		%script
 			window.jQuery || document.write("<script src='/wrestling/js/vendor/jquery-3.1.1.min.js'><\/script>")
 		%script{src:"/wrestling/js/main.js"}
-		}
+
+		
 

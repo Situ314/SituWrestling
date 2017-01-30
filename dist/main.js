@@ -3,9 +3,27 @@
 ;(function () {
 
 	var sticky = false;
+	var currentPosition = 0;
+
+	var imageCounter = $("[data-name='image-counter']").attr("content");
+
+	console.log(imageCounter);
 
 	$("#sticky-navigation").removeClass("hidden");
 	$("#sticky-navigation").slideUp(0);
+
+	setInterval(function () {
+		console.log("intervalo");
+		if (currentPosition < imageCounter) {
+			currentPosition++;
+		} else {
+			currentPosition = 0;
+		}
+		//		currentPosition++
+		$("#gallery .inner").css({
+			left: "-" + currentPosition * 100 + "%"
+		});
+	}, 2000);
 
 	$(window).scroll(function () {
 
